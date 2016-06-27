@@ -12,3 +12,9 @@ def post_view(request, post_id):
     post = get_object_or_404(Posts, pk=post_id)
     context = {'post': post}
     return render(request, 'posts/base.html', context)
+
+
+def post_add(request):
+    post = get_object_or_404(Posts, pk=post_id)
+    context = {'post': post}
+    return render(request, 'posts/base.html', context)
