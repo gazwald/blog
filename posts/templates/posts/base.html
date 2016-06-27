@@ -1,0 +1,31 @@
+<!doctype html>
+<html class="no-js" lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Blogzwald | Welcome</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.css">
+	</head>
+	<body>
+    <div class="row">
+		<div class="large-12 columns">
+			<h1>Blogzwald</h1>
+		</div>
+    </div>
+    {% for post in posts %}
+	<div class="post">
+		<div class="date">
+		{{ post.pub_date }}
+		</div>
+        <h1><a href="{% url 'posts:post_view' post.id %}">{{ post.title }}</a></h1>
+		<p>{{ post.body | linebreaksbr }}</p>
+	</div>
+	{% endfor %}
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+	</body>
+</html>
+
