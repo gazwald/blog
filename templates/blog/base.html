@@ -6,13 +6,24 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.css">
 	</head>
 	<body>
+    <div class="row text-center">
+			<h1>Welcome to Blogzwald</h1>
+    </div>
     <div class="row">
-		<div class="large-12 columns">
-			<h1>Welcome to Foundation</h1>
+    </div>
+    <div class="row">
+		<div class="large-3 columns">
+		</div>
+		<div class="large-6 columns">
+		{% block content %}
+		{% endblock %}
+		</div>
+		<div class="large-3 columns">
 		</div>
     </div>
-    {% block content %}
-    {% endblock %}
+    <div class="row text-center">
+		Copyright 2016, blah blah	
+    </div>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.js"></script>
     <script>
