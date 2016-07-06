@@ -3,29 +3,42 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{% block title %}Blogzwald{% endblock %} | Welcome</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.css">
     </head>
     <body>
     <div class="row text-center">
-        <div class="large-8 columns">
-            <h1>Welcome to Blogzwald</h1>
-        </div>
-    </div>
-    <div class="row">
-        <div class="large-8 columns">
-            <hr>
-            {% block content %}
-            {% endblock %}
-            <hr>
-        </div>
+		<img src="http://placehold.it/650x100">
     </div>
     <div class="row text-center">
-        <div class="large-8 columns">
-            Copyright 2016, blah blah
-        </div>
+		<div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
+		  <button class="menu-icon" type="button" data-toggle></button>
+		  <div class="title-bar-title">Menu</div>
+		</div>
+
+		<div class="top-bar" id="main-menu">
+		  <div class="top-bar-left">
+			<ul class="menu">
+			  <li class="menu-text">Blogzwald</li>
+			  <li><a href="#">Posts</a></li>
+			  <li><a href="#">Tutorials</a></li>
+			  <li><a href="#">Contact</a></li>
+			</ul>
+		  </div>
+		</div>
+    </div>
+    <div class="row">
+		<hr>
+		{% block content %}
+		{% endblock %}
+		<hr>
+    </div>
+    <div class="row text-center">
+		Copyright 2016, blah blah
     </div>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/plugins/foundation.dropdownMenu.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/plugins/foundation.responsiveToggle.js"></script>
     <script>
       $(document).foundation();
     </script>
