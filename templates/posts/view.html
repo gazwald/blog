@@ -6,6 +6,6 @@
     {% for post in posts %}
         <h2><a href="{% url 'posts:post_view' post.id %}">{{ post.title }}</a></h2>
         {{ post.date_pub }} {{ post.author }}
-		<p>{{ post.body | safe }}</p>
-	{% endfor %}
+        <p>{{ post.body | safe }}</p>
+    {% endfor %}
 {% endblock %}
