@@ -25,3 +25,7 @@ Written in VIM
 Targeting Python 3.4
 
 See requirements.txt for package versions.
+
+## Notes
+
+Posts accept HTML and will render appropriately.
