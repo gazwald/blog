@@ -26,6 +26,15 @@ Targeting Python 3.4
 
 See requirements.txt for package versions.
 
-## Notes
+## TODO
 
-Posts accept HTML and will render appropriately.
+Login
+Add post
+Basic WYSIWYG editor for posts
+Custom CSS
+Unit tests
+ELB - http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-django.html
+S3 - Move static content into S3
+CodeCommit?
+Pipeline
+CloudFront
