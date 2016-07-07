@@ -28,6 +28,7 @@ See requirements.txt for package versions.
 
 ## TODO
 
+Fixtures
 Generic display views - https://docs.djangoproject.com/en/1.9/ref/class-based-views/generic-display/
 Login
 Add post
