@@ -36,6 +36,7 @@ Add post
 Basic WYSIWYG editor for posts
 Custom CSS
 Unit tests
+coverage.py
 ELB - http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-django.html
 S3 - Move static content into S3
 CodeCommit?
