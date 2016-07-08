@@ -11,4 +11,30 @@
             <p>{{ post.body | safe }}</p>
         </div>
     {% endfor %}
+
+	<ul class="pagination text-center" role="navigation" aria-label="Pagination">
+	{% if posts.has_previous %}
+        <li class="pagination-previous">
+            <a href="?page={{ posts.previous_page_number }}" aria-label="Previous page">Previous</a>
+	{% else %}
+        <li class="pagination-previous disabled">Previous
+	{% endif %}
+        </li>
+
+	{% for page in posts.paginator.page_range %}
+		{% if page == posts.number %}
+		<li class="current"><span class="show-for-sr">You're on page</span>{{ page }}</li>
+		{% else %}
+        <li><a href="?page={{ page }}" aria-label="Page {{ page }}">{{ page }}</a></li>
+		{% endif %}
+	{% endfor %}
+
+	{% if posts.has_next %}
+        <li class="pagination-next">
+            <a href="?page={{ posts.next_page_number }}" aria-label="Next page">Next</a>
+    {% else %}
+        <li class="pagination-next disabled">Next
+        </li>
+	{% endif %}
+	</ul>
 {% endblock %}
