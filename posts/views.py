@@ -1,10 +1,9 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Post, Category
+from .models import Post
 
 
 def index(request):
-    category = get_object_or_404(Category, category='post')
-    posts = Post.objects.order_by('-date_pub').filter(category=category)[:5]
+    posts = Post.objects.order_by('-date_pub')[:5]
     context = {'posts': posts}
     return render(request, 'posts/view.html', context)
 
