@@ -8,7 +8,7 @@ from .forms import PostForm
 
 def index(request):
     post_list = Post.objects.order_by('-date_pub')
-    paginator = Paginator(post_list, 2)
+    paginator = Paginator(post_list, 5)
 
     page = request.GET.get('page')
     try:
