@@ -1,0 +1,28 @@
+body {
+    background-color: #1c1c1c;
+}
+.callout {
+    background-color: #585858;
+}
+li {
+    background-color: #262626;
+}
+a {
+    background-color: #585858;
+    color: #d75f00;
+}
+a:hover {
+    background-color: #262626;
+    color: #00afaf;
+}
+p {
+    color: #839496;
+}
+.title-bar {
+    color: #5f5faf;
+}
+	
+.top-bar {
+    background-color: #262626;
+    color: #5f5faf;
+}
