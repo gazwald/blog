@@ -29,13 +29,13 @@ See requirements.txt for package versions.
 ## TODO
 
 * Fixtures
-* Generic display views
 * Login page
+* Image upload and management
+* S3 - Move static content into S3
 * Basic WYSIWYG editor for posts
 * Unit tests
 * coverage.py
 * ELB - http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-django.html
-* S3 - Move static content into S3
 * CodeCommit?
 * Pipeline
 * CloudFront
