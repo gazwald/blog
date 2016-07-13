@@ -35,7 +35,8 @@ def post_add(request):
         if form.is_valid():
             form.save()
             return redirect('posts:index')
+    else:
+        form = PostForm(initial={'date_pub': timezone.now()})
 
-    form = PostForm(initial={'date_pub': timezone.now()})
     context = {'form': form}
     return render(request, 'posts/add.html', context)
