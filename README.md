@@ -34,8 +34,8 @@ See requirements.txt for package versions.
 * Basic WYSIWYG editor for posts
 * Unit tests
 * coverage.py
-* ELB - http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-django.html
-* Fix CORS on S3
+* ELB - (http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-django.html)
+* Fix CORS on S3 - (https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html)
 * CodeCommit?
 * Pipeline
 * CloudFront
