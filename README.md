@@ -31,11 +31,11 @@ See requirements.txt for package versions.
 * Fixtures
 * Login page
 * Image upload and management
-* S3 - Move static content into S3
 * Basic WYSIWYG editor for posts
 * Unit tests
 * coverage.py
 * ELB - http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-django.html
+* Fix CORS on S3
 * CodeCommit?
 * Pipeline
 * CloudFront

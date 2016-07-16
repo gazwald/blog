@@ -2,7 +2,7 @@ from django.forms import ModelForm
 from .models import UploadedFile
 
 
-class PostForm(ModelForm):
+class UploadedFileForm(ModelForm):
     class Meta:
-        model = Post
+        model = UploadedFile
         exclude = ['date_add']

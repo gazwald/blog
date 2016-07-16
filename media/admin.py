@@ -1,3 +1,9 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import UploadedFile
+
+
+class UploadedFileAdmin(admin.ModelAdmin):
+    list_display = ('title', 'date_add')
+
+admin.site.register(UploadedFile, UploadedFileAdmin)
