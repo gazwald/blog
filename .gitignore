@@ -92,3 +92,6 @@ ENV/
 # Rope project settings
 .ropeproject
 >>>>>>> e09ce834b4d7e7eeb63c17a6d26a884f2ae31c3b
+
+# Environment configuration
+set_env.bash
