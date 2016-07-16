@@ -131,4 +131,6 @@ if os.getenv('S3_BUCKET'):
     AWS_STORAGE_BUCKET_NAME = os.getenv('S3_BUCKET')
     AWS_ACCESS_KEY_ID = os.getenv('S3_ACCESS_ID')
     AWS_SECRET_ACCESS_KEY = os.getenv('S3_ACCESS_KEY')
+    AWS_S3_CUSTOM_DOMAIN = '{bucket}.s3.amazonaws.com'.format(bucket=AWS_STORAGE_BUCKET_NAME)
+    STATIC_URL = "https://{domain}/".format(domain=AWS_S3_CUSTOM_DOMAIN)
 

@@ -4,8 +4,8 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{% block title %}Blogzwald{% endblock %} | Welcome</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.css">
-        <link rel="stylesheet" href="{% static "app.css" %}">
+        <link rel="stylesheet" href="{% static "css/foundation.css" %}">
+        <link rel="stylesheet" href="{% static "css/app.css" %}">
     </head>
     <body>
     <div class="row text-center">
@@ -35,9 +35,10 @@
     <div class="row text-center">
 		Copyright 2016, blah blah
     </div>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.js"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/plugins/foundation.responsiveToggle.js"></script>
+    <script type="text/javascript" src="{% static "js/vendor/jquery.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/vendor/what-input.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/vendor/foundation.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/app.js" %}"></script>
     <script>
       $(document).foundation();
     </script>
