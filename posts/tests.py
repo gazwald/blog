@@ -4,6 +4,7 @@ from django.contrib.auth.models import AnonymousUser, User
 from .views import post_add
 from .models import Post
 
+
 class TestPosts(TestCase):
     def setUp(self):
         self.factory = RequestFactory()
@@ -11,6 +12,7 @@ class TestPosts(TestCase):
                 username="my_user",
                 password="ALackOfSecurity",
                 email="root@localhost")
+
 
     def test_add_post(self):
         new_post = Post(
