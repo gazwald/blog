@@ -1,7 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.auth.decorators import login_required
-from django.utils import timezone
 
 from .models import UploadedFile
 from .forms import UploadedFileForm
@@ -32,7 +31,7 @@ def media_view(request, file_id):
 
 
 @login_required
-def meida_add(request):
+def media_add(request):
     if request.method == 'POST':
         form = UploadedFileForm(request.POST, request.FILES)
         if form.is_valid():
@@ -49,5 +48,4 @@ def meida_add(request):
 def media_del(request, file_id):
     file = get_object_or_404(UploadedFile, pk=file_id)
     file.delete()
-    context = {'file': file}
     return redirect('media:media_list')
