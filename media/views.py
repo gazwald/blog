@@ -19,15 +19,10 @@ def media_list(request):
     except EmptyPage:
         files = paginator.page(paginator.num_pages)
 
-    context = {'files': files}
+    context = {'files': files,
+               'form': UploadedFileForm}
+
     return render(request, 'media/list.html', context)
-
-
-@login_required
-def media_view(request, file_id):
-    file = get_object_or_404(UploadedFile, pk=file_id)
-    context = {'file': file}
-    return render(request, 'media/view.html', context)
 
 
 @login_required
@@ -36,12 +31,8 @@ def media_add(request):
         form = UploadedFileForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('media:media_list')
-    else:
-        form = UploadedFileForm()
 
-    context = {'form': form}
-    return render(request, 'media/add.html', context)
+    return redirect('media:media_list')
 
 
 @login_required
