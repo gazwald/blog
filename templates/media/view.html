@@ -3,7 +3,7 @@
 {% block title %}Media{% endblock %}
 
 {% block content %}
-    {% if media %}
+    {% if files %}
 	<div class="callout clearfix">
 		<table>
 			<tr>
@@ -25,9 +25,10 @@
     {% endif %}
 
     {% if form %}
-	<form action="{% url "add" %}" method="post" enctype="multipart/form-data">
-		{{ form}}
-		<input type="submit" value="Add"/>
+	<form action="{% url 'media:media_add' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+		<input type="submit" value="Add" class="hollow button"/>
 	</form>
 	{% endif %}
 

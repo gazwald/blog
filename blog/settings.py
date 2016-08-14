@@ -114,14 +114,16 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
+# Media files (Images)
+MEDIA_ROOT = '/media/'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [ os.path.join(BASE_DIR, "static") ]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
 if os.getenv('S3_BUCKET'):
-    ## http://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html
+    # http://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html
     STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
     AWS_STORAGE_BUCKET_NAME = os.getenv('S3_BUCKET')
@@ -129,4 +131,4 @@ if os.getenv('S3_BUCKET'):
     AWS_SECRET_ACCESS_KEY = os.getenv('S3_ACCESS_KEY')
     AWS_S3_CUSTOM_DOMAIN = '{bucket}.s3.amazonaws.com'.format(bucket=AWS_STORAGE_BUCKET_NAME)
     STATIC_URL = "https://{domain}/".format(domain=AWS_S3_CUSTOM_DOMAIN)
-
+    MEDIA_URL = "https://{domain}/".format(domain=AWS_S3_CUSTOM_DOMAIN)

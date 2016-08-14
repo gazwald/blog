@@ -20,9 +20,9 @@ def media_list(request):
         files = paginator.page(paginator.num_pages)
 
     context = {'files': files,
-               'form': UploadedFileForm}
+               'form': UploadedFileForm()}
 
-    return render(request, 'media/list.html', context)
+    return render(request, 'media/view.html', context)
 
 
 @login_required
@@ -30,7 +30,9 @@ def media_add(request):
     if request.method == 'POST':
         form = UploadedFileForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            new_upload = form.save(commit=False)
+            new_upload = request.user
+            new_upload.save()
 
     return redirect('media:media_list')
 
