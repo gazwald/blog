@@ -14,39 +14,35 @@ class TestPosts(TestCase):
     def setUp(self):
         self.factory = RequestFactory()
         self.user = User.objects.create_user(
-                username="my_user",
-                password="ALackOfSecurity",
-                email="root@localhost.localdomain")
+            username="my_user",
+            password="ALackOfSecurity",
+            email="root@localhost.localdomain")
 
     def generic_post(self):
-        return Post.objects.create( author=self.user,
-                                    title=get_random_string(length=40),
-                                    slug=get_random_string(length=32),
-                                    body=get_random_string(length=300),
-                                    date_pub = timezone.now())
+        return Post.objects.create(author=self.user,
+                                   title=get_random_string(length=40),
+                                   slug=get_random_string(length=32),
+                                   body=get_random_string(length=300),
+                                   date_pub=timezone.now())
 
     def test_category_creation(self):
         new_cat = Category.objects.create(category='My Category')
         self.assertIsInstance(new_cat, Category)
 
-
     def test_post_creation(self):
         new_post = self.generic_post()
         self.assertIsInstance(new_post, Post)
 
-
     def test_view_post_index(self):
-       request = self.factory.get('/posts/')
-       response = index(request)
-       self.assertEqual(response.status_code, 200)
-
+        request = self.factory.get('/posts/')
+        response = index(request)
+        self.assertEqual(response.status_code, 200)
 
     def test_view_post_id(self):
-       new_post = self.generic_post()
-       request = self.factory.get('/posts/1')
-       response = post_view(request, 1)
-       self.assertEqual(response.status_code, 200)
-
+        new_post = self.generic_post()
+        request = self.factory.get('/posts/1')
+        response = post_view(request, 1)
+        self.assertEqual(response.status_code, 200)
 
     def test_add_post_logged_in(self):
         request = self.factory.get('/posts/add/')
@@ -54,21 +50,20 @@ class TestPosts(TestCase):
         response = post_add(request)
         self.assertEqual(response.status_code, 200)
 
-
     def test_create_valid_post_logged_in(self):
-        data = {'author': 1, 'title': 'Hello World', 'body': 'Another amazing post'}
+        data = {'author': 1,
+                'title': 'Hello World',
+                'body': 'Another amazing post'}
         request = self.factory.post('/posts/add/', data)
         request.user = self.user
         response = post_add(request)
         self.assertEqual(response.status_code, 302)
-
 
     def test_add_post_anonymous(self):
         request = self.factory.get('/posts/add/', follow=True)
         request.user = AnonymousUser()
         response = post_add(request)
         self.assertEqual(response.status_code, 302)
-
 
     def test_emptypage(self):
         for new_page in range(14):
@@ -77,8 +72,9 @@ class TestPosts(TestCase):
         response = index(request)
         self.assertRaises(EmptyPage)
 
-
     def test_slug_field(self):
-        form = PostForm(data={'author': 1, 'title': 'Hello World', 'body': 'Another post goes here'})
+        form = PostForm(data={'author': 1,
+                              'title': 'Hello World',
+                              'body': 'Another post goes here'})
         self.assertTrue(form.is_valid())
         self.assertIsInstance(form.save(), Post)
