@@ -95,3 +95,6 @@ ENV/
 
 # Environment configuration
 set_env.bash
+
+# Misc
+.swp
