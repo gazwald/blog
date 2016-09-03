@@ -2,6 +2,8 @@ from django.test import TestCase, RequestFactory
 from django.contrib.auth.models import AnonymousUser, User
 from django.utils import timezone
 from django.core.paginator import EmptyPage
+from django.utils.text import slugify
+from django.utils.crypto import get_random_string
 
 from .views import index, post_add, post_view
 from .models import Post, Category
@@ -18,8 +20,9 @@ class TestPosts(TestCase):
 
     def generic_post(self):
         return Post.objects.create( author=self.user,
-                                    title='A Title',
-                                    body='A Body',
+                                    title=get_random_string(length=40),
+                                    slug=get_random_string(length=32),
+                                    body=get_random_string(length=300),
                                     date_pub = timezone.now())
 
     def test_category_creation(self):
@@ -43,14 +46,6 @@ class TestPosts(TestCase):
        request = self.factory.get('/posts/1')
        response = post_view(request, 1)
        self.assertEqual(response.status_code, 200)
-
-
-    def test_add_post(self):
-        new_post = Post(
-                    author=self.user,
-                    title="Hello world",
-                    body="I am a test post, isn't this great")
-        self.assertEqual(new_post.title, "Hello world")
 
 
     def test_add_post_logged_in(self):
