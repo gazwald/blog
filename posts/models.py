@@ -10,7 +10,7 @@ class Category(models.Model):
 
 class Post(models.Model):
     author = models.ForeignKey(User)
-    category = models.ForeignKey(Category, null=True)
+    category = models.ForeignKey(Category, blank=True, null=True)
     title = models.CharField(max_length=50)
     slug = models.SlugField(unique=True)
     body = models.TextField()

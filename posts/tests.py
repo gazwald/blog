@@ -60,7 +60,7 @@ class TestPosts(TestCase):
         request = self.factory.post('/posts/add/', data)
         request.user = self.user
         response = post_add(request)
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 302)
 
 
     def test_add_post_anonymous(self):
@@ -76,3 +76,9 @@ class TestPosts(TestCase):
         request = self.factory.get('/posts/', data={'page': 10})
         response = index(request)
         self.assertRaises(EmptyPage)
+
+
+    def test_slug_field(self):
+        form = PostForm(data={'author': 1, 'title': 'Hello World', 'body': 'Another post goes here'})
+        self.assertTrue(form.is_valid())
+        self.assertIsInstance(form.save(), Post)

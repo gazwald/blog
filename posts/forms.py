@@ -1,6 +1,7 @@
 from django.forms import ModelForm
 from .models import Post
 from django.utils.text import slugify
+from random import randint
 
 
 class PostForm(ModelForm):
@@ -11,7 +12,7 @@ class PostForm(ModelForm):
 
     def save(self):
         instance = super(PostForm, self).save(commit=False)
-        slugger = ' '.join(instance.id, instance.title)
+        slugger = ' '.join([instance.title, str(randint(0,99))])
         instance.slug = slugify(slugger)
         instance.save()
         return instance
