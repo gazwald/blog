@@ -1,6 +1,7 @@
 from django.test import TestCase, RequestFactory
 from django.contrib.auth.models import AnonymousUser, User
 from django.utils import timezone
+from django.core.paginator import EmptyPage
 
 from .views import index, post_add, post_view
 from .models import Post, Category
@@ -72,3 +73,11 @@ class TestPosts(TestCase):
         request.user = AnonymousUser()
         response = post_add(request)
         self.assertEqual(response.status_code, 302)
+
+
+    def test_emptypage(self):
+        for new_page in range(14):
+            self.generic_post()
+        request = self.factory.get('/posts/', data={'page': 10})
+        response = index(request)
+        self.assertRaises(EmptyPage)
