@@ -1,0 +1,15 @@
+[
+{
+    "model": "posts.post",
+    "pk": 1,
+    "fields": {
+        "author": 1,
+        "category": null,
+        "title": "Hello World",
+        "slug": "1-hello-world",
+        "body": "<p>First Post!</p>\r\n<p>This will be the first post on my blog - mostly because I need something to put in and test with and also because I'm going to use it as a fixture.<p>\r\n<p>I'm almost happy enough with the state of this blog that it won't be long before I actually deploy it somewhere. That's a whole other beast though...</p>",
+        "date_add": "2016-09-03T12:25:08.512Z",
+        "date_pub": "2016-09-03T12:24:56Z"
+    }
+}
+]
