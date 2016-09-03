@@ -7,10 +7,18 @@
 {% endblock %}
 
 {% block content %}
+<div class="large-4 large-centered columns">
 <form method="post">
 {% csrf_token %}
 {{ form.as_p }}
-<div class="g-recaptcha" data-sitekey="6LccOykTAAAAACRj9xEMRzrZT04FDD1KmSmHsu0T"></div>
-<button class="hollow button" type="submit">Login</button>
+<center>
+<p>
+    <div class="g-recaptcha" data-sitekey="6LccOykTAAAAACRj9xEMRzrZT04FDD1KmSmHsu0T"></div>
+</p>
+<p>
+    <button class="hollow button" type="submit">Login</button>
+</p>
+</center>
 </form>
+</div>
 {% endblock %}
