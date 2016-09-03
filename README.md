@@ -31,7 +31,7 @@ Currently checking test coverage with Coverage 4.2
 ## TODO
 
 * Login page
-* reCaptcha
+* Google reCaptcha
 * Image upload and management
 * Basic WYSIWYG editor for posts
 * Fixtures
@@ -43,3 +43,4 @@ Currently checking test coverage with Coverage 4.2
 * Pipeline
 * Memcache/Redis (ElastiCache)
 * CloudFront
+* Google Analytics
