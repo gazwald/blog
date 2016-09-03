@@ -2,10 +2,15 @@
 
 {% block title %}Login{% endblock %}
 
+{% block head %}
+<script src='https://www.google.com/recaptcha/api.js'></script>
+{% endblock %}
+
 {% block content %}
 <form method="post">
 {% csrf_token %}
 {{ form.as_p }}
+<div class="g-recaptcha" data-sitekey="6LccOykTAAAAACRj9xEMRzrZT04FDD1KmSmHsu0T"></div>
 <button class="hollow button" type="submit">Login</button>
 </form>
 {% endblock %}
