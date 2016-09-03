@@ -26,17 +26,19 @@ Targeting Python 3.4
 
 See requirements.txt for package versions.
 
+Currently checking test coverage with Coverage 4.2
+
 ## TODO
 
-* Fixtures
 * Login page
 * Image upload and management
 * Basic WYSIWYG editor for posts
+* Fixtures
 * Unit tests
-* coverage.py
+* Integration tests
+* Functional tests
 * Elastic Beanstalk - (http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-django.html)
 * Fix CORS on S3 - (https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html)
-* CodeCommit?
 * Pipeline
+* Memcache/Redis (ElastiCache)
 * CloudFront
-* ElastiCache
