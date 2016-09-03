@@ -2,12 +2,15 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
+from django.core.cache import cache
+
+
 from .models import Post
 from .forms import PostForm
 
 
 def index(request):
-    post_list = Post.objects.all()
+    post_list = cache.get_or_set('post_list', Post.objects.all(), 60)
     paginator = Paginator(post_list, 5)
 
     page = request.GET.get('page')

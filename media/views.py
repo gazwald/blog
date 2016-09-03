@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.auth.decorators import login_required
+from django.core.cache import cache
 
 from .models import UploadedFile
 from .forms import UploadedFileForm
@@ -8,7 +9,7 @@ from .forms import UploadedFileForm
 
 @login_required
 def media_list(request):
-    file_list = UploadedFile.objects.order_by('-date_add')
+    file_list = cache.get_or_set('file_list', UploadedFile.objects.order_by('-date_add'), 60)
     paginator = Paginator(file_list, 5)
 
     page = request.GET.get('page')
