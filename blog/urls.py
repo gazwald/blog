@@ -21,4 +21,5 @@ urlpatterns = [
     url(r'^about/', include('about.urls')),
     url(r'^media/', include('media.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^accounts/', include('django.contrib.auth.urls')),
 ]

@@ -24,6 +24,11 @@
 			  <li><a href="/posts">Posts</a></li>
 			  <li><a href="#">Tutorials</a></li>
 			  <li><a href="/about">About</a></li>
+              {% if user.is_authenticated %}
+			  <li><a href="/accounts/logout">Logout</a></li>
+              {% else %}
+			  <li><a href="/accounts/login">Login</a></li>
+              {% endif %}
 			</ul>
 		  </div>
 		</div>

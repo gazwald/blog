@@ -34,3 +34,7 @@ img {
     background: #d75f00;
     box-shadow: 0 7px 0 #d75f00, 0 14px 0 #d75f00;
 }
+
+label {
+    color: #eee8d5;
+}

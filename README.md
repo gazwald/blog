@@ -31,6 +31,7 @@ Currently checking test coverage with Coverage 4.2
 ## TODO
 
 * Login page
+* reCaptcha
 * Image upload and management
 * Basic WYSIWYG editor for posts
 * Fixtures
