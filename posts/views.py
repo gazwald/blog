@@ -10,7 +10,7 @@ from .forms import PostForm
 
 
 def index(request):
-    post_list = cache.get_or_set('post_list', Post.objects.all(), 60)
+    post_list = cache.get_or_set('post_list', Post.objects.all())
     paginator = Paginator(post_list, 5)
 
     page = request.GET.get('page')

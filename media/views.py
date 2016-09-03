@@ -9,7 +9,7 @@ from .forms import UploadedFileForm
 
 @login_required
 def media_list(request):
-    file_list = cache.get_or_set('file_list', UploadedFile.objects.order_by('-date_add'), 60)
+    file_list = cache.get_or_set('file_list', UploadedFile.objects.order_by('-date_add'))
     paginator = Paginator(file_list, 5)
 
     page = request.GET.get('page')
