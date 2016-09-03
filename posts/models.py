@@ -11,8 +11,8 @@ class Category(models.Model):
 class Post(models.Model):
     author = models.ForeignKey(User)
     category = models.ForeignKey(Category, null=True)
-    title = models.CharField(max_length=50, unique=True)
-    slug = models.SlugField()
+    title = models.CharField(max_length=50)
+    slug = models.SlugField(unique=True)
     body = models.TextField()
     date_add = models.DateTimeField('Date added', auto_now=True)
     date_pub = models.DateTimeField('Date published', null=True, blank=True)
