@@ -32,6 +32,7 @@ Currently checking test coverage with Coverage 4.2
 
 AWS Guide for deploying Django to ElasticBeanstalk:
 * http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-django.html
+
 This article was super useful when working out how Python/Django/ElasticBeanstalk come together:
 * https://realpython.com/blog/python/deploying-a-django-app-and-postgresql-to-aws-elastic-beanstalk/
 
