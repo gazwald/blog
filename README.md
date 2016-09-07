@@ -22,11 +22,18 @@ Written in VIM
 * shiftwidth=4
 * expandtab
 
-Targeting Python 3.4
+Targeting Python 3.4 on RHEL/Fedora based systems
 
 See requirements.txt for package versions.
 
 Currently checking test coverage with Coverage 4.2
+
+## Useful links
+
+AWS Guide for deploying Django to ElasticBeanstalk:
+* http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-django.html
+This article was super useful when working out how Python/Django/ElasticBeanstalk come together:
+* https://realpython.com/blog/python/deploying-a-django-app-and-postgresql-to-aws-elastic-beanstalk/
 
 ## TODO
 
@@ -36,7 +43,7 @@ Currently checking test coverage with Coverage 4.2
 * Unit tests
 * Integration tests
 * Functional tests
-* Elastic Beanstalk - (http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-django.html)
+* Elastic Beanstalk
 * Fix CORS on S3 - (https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html)
 * Pipeline
 * Memcache/Redis (ElastiCache)
