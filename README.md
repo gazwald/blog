@@ -35,18 +35,3 @@ AWS Guide for deploying Django to ElasticBeanstalk:
 
 This article was super useful when working out how Python/Django/ElasticBeanstalk come together:
 * https://realpython.com/blog/python/deploying-a-django-app-and-postgresql-to-aws-elastic-beanstalk/
-
-## TODO
-
-* Google reCaptcha
-* Image upload and management
-* Basic WYSIWYG editor for posts
-* Unit tests
-* Integration tests
-* Functional tests
-* Elastic Beanstalk
-* Fix CORS on S3 - (https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html)
-* Pipeline
-* Memcache/Redis (ElastiCache)
-* CloudFront
-* Google Analytics
