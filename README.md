@@ -29,9 +29,11 @@ Currently checking test coverage with Coverage 4.4
 ## Tests
 
 Django tests:
-
+```
 ./manage test
-
+```
 Code coverage:
+```
 coverage run --source='.' manage.py test myapp
 coverage report
+```
