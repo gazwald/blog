@@ -34,6 +34,6 @@ Django tests:
 ```
 Code coverage:
 ```
-coverage run --source='.' manage.py test myapp
+coverage run --source='.' manage.py test blog
 coverage report
 ```
