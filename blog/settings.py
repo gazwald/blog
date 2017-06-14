@@ -33,8 +33,6 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'posts',
     'about',
-    'media',
-    'storages',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -77,24 +75,12 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
-if 'RDS_HOSTNAME' in os.environ:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': os.environ['RDS_DB_NAME'],
-            'USER': os.environ['RDS_USERNAME'],
-            'PASSWORD': os.environ['RDS_PASSWORD'],
-            'HOST': os.environ['RDS_HOSTNAME'],
-            'PORT': os.environ['RDS_PORT'],
-        }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
-    }
+}
 
 # Caching
 # https://docs.djangoproject.com/en/1.9/topics/cache/
@@ -145,14 +131,3 @@ MEDIA_ROOT = '/media/'
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
-
-if os.getenv('S3_BUCKET'):
-    # http://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html
-    STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-    AWS_STORAGE_BUCKET_NAME = os.getenv('S3_BUCKET')
-    AWS_ACCESS_KEY_ID = os.getenv('S3_ACCESS_ID')
-    AWS_SECRET_ACCESS_KEY = os.getenv('S3_ACCESS_KEY')
-    AWS_S3_CUSTOM_DOMAIN = '{bucket}.s3.amazonaws.com'.format(bucket=AWS_STORAGE_BUCKET_NAME)
-    STATIC_URL = "https://{domain}/".format(domain=AWS_S3_CUSTOM_DOMAIN)
-    MEDIA_URL = "https://{domain}/".format(domain=AWS_S3_CUSTOM_DOMAIN)
